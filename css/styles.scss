@@ -1,0 +1,26 @@
+
+
+.page-header h1,
+.page-header p {
+  text-align: center;
+}
+
+.page-header p,
+.footer .jumbotron p {
+  margin-bottom: 0;
+}
+
+.page-header {
+  margin: 20px 0 20px;
+}
+
+#valid-weather h1,
+.weather-temperature,
+.weather-description {
+  text-align: center;
+}
+
+#valid-weather img {
+  margin: 0 auto;
+  display: block;
+}

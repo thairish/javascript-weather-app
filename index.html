@@ -1,0 +1,82 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>JavaScript Weather App</title>
+
+    <!-- Taken from the latest CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="jumbotron">
+        <div class="page-header">
+          <h1>JavaScript Weather App</h1>
+          <p>Weather app using the OpenWeatherMap API.</p>
+        </div>
+      </div>
+
+      <p>Enter your location to search for weather:</p>
+
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Search</button>
+        </span>
+      </div>
+
+
+
+
+      <div class="container">
+        <div id="valid-weather" class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 current-weather">
+            <h1></h1>
+            <p class="weather-temperature"></p>
+            <img src="" alt="weather-icon">
+            <p class="weather-description"></p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 forecast-weather">
+            <div class="forecast-first">
+              <p class="day-name"></p>
+            </div>
+            <div class="forecast-second">
+              <p class="day-name"></p>
+            </div>
+            <div class="forecast-third">
+              <p class="day-name"></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="invalid-weather" class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <footer class="footer">
+        <div class="jumbotron">
+          <p>Enter your location to search for weather:</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Taken from the latest CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
