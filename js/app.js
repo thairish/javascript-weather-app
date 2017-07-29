@@ -28,19 +28,30 @@ window.onload = function() {
     validResultsDiv.style.display = "none";
     invalidResultsDiv.style.display = "none";
 
+    searchInput.addEventListener('keypress', function(event) {
+      if(event.keyCode === 13) {
+        searchWeather();
+      }
+    });
+
+    searchButton.addEventListener('click', function() {
+        searchWeather();
+    });
+
+
     //Get JSON data if user input was valid
-    searchButton.onclick = function() {
+    function searchWeather() {
       var searchTerm = searchInput.value;
 
       var http = new XMLHttpRequest();
-      var url = "http://api.openweathermap.org/data/2.5/weather?q=" + searchTerm + "&APPID=95c245d940471089415204e9a44b5891";
+      var url = "http://api.openweathermap.org/data/2.5/weather?q=" + searchTerm + "&APPID=95c245d940471089415204e9a44b5891&units=metric";
       var method = "GET";
       var type = "current";
 
       sendJsonRequest(http, url, method, type);
 
       var http = new XMLHttpRequest();
-      url = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchTerm + "&APPID=95c245d940471089415204e9a44b5891";
+      url = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchTerm + "&APPID=95c245d940471089415204e9a44b5891&units=metric";
       method = "GET";
       type = "forecast";
 
@@ -61,7 +72,7 @@ window.onload = function() {
 
       validCityName.textContent = city;
       validWeatherDescription.textContent = description;
-      validWeatherTemperature.textContent = temperature;
+      validWeatherTemperature.innerHTML = temperature + "&#8451;";
       validWeatherIconImg.src = icon;
     }
 
@@ -84,7 +95,6 @@ window.onload = function() {
       }
 
       for(var j=0; j<4; j++) {
-        console.log(forecastWeather[j]);
         var forecastDate = new Date(forecastWeather[j].dt_txt);
         var forecastDay = forecastDate.getDay();
         var forecastDayName = dayNames[forecastDay];
@@ -92,23 +102,21 @@ window.onload = function() {
         var forecastDescription = forecastWeather[j].weather[0].description;
         var forecastIcon = "http://openweathermap.org/img/w/" + forecastWeather[j].weather[0].icon + ".png";
 
-        console.log(forecastDescription);
-
         if(j === 0) {
           forecastFirstDay.textContent = forecastDayName;
           forecastFirstIcon.src = forecastIcon;
           forecastFirstDescription.textContent = forecastDescription;
-          forecastFirstTemperature.textContent = forecastTemperature;
+          forecastFirstTemperature.innerHTML = forecastTemperature + "&#8451;";
         } else if(j === 1) {
           forecastSecondDay.textContent = forecastDayName;
           forecastSecondIcon.src = forecastIcon;
           forecastSecondDescription.textContent = forecastDescription;
-          forecastSecondTemperature.textContent = forecastTemperature;
+          forecastSecondTemperature.innerHTML = forecastTemperature + "&#8451;";
         } else if(j === 2) {
           forecastThirdDay.textContent = forecastDayName;
           forecastThirdIcon.src = forecastIcon;
           forecastThirdDescription.textContent = forecastDescription;
-          forecastThirdTemperature.textContent = forecastTemperature;
+          forecastThirdTemperature.innerHTML = forecastTemperature + "&#8451;";
         }
 
       }

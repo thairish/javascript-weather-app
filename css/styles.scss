@@ -22,5 +22,15 @@
 
 #valid-weather img {
   margin: 0 auto;
-  display: block;
+  display: inline-block;
+}
+
+.forecast-first span,
+.forecast-second span,
+.forecast-third span {
+  display: inline-block;
+}
+
+.clear {
+  clear: both;
 }
