@@ -14,6 +14,15 @@ window.onload = function() {
     var forecastFirstDay = document.querySelector(".forecast-first .day-name");
     var forecastSecondDay = document.querySelector(".forecast-second .day-name");
     var forecastThirdDay = document.querySelector(".forecast-third .day-name");
+    var forecastFirstIcon = document.querySelector(".forecast-first img");
+    var forecastSecondIcon = document.querySelector(".forecast-second img");
+    var forecastThirdIcon = document.querySelector(".forecast-third img");
+    var forecastFirstDescription = document.querySelector(".forecast-first .weather-description");
+    var forecastSecondDescription = document.querySelector(".forecast-second .weather-description");
+    var forecastThirdDescription = document.querySelector(".forecast-third .weather-description");
+    var forecastFirstTemperature = document.querySelector(".forecast-first .weather-temperature");
+    var forecastSecondTemperature = document.querySelector(".forecast-second .weather-temperature");
+    var forecastThirdTemperature = document.querySelector(".forecast-third .weather-temperature");
 
     //Hide results divs when we start the app initially
     validResultsDiv.style.display = "none";
@@ -75,16 +84,31 @@ window.onload = function() {
       }
 
       for(var j=0; j<4; j++) {
+        console.log(forecastWeather[j]);
         var forecastDate = new Date(forecastWeather[j].dt_txt);
         var forecastDay = forecastDate.getDay();
         var forecastDayName = dayNames[forecastDay];
+        var forecastTemperature = forecastWeather[j].main.temp;
+        var forecastDescription = forecastWeather[j].weather[0].description;
+        var forecastIcon = "http://openweathermap.org/img/w/" + forecastWeather[j].weather[0].icon + ".png";
+
+        console.log(forecastDescription);
 
         if(j === 0) {
           forecastFirstDay.textContent = forecastDayName;
+          forecastFirstIcon.src = forecastIcon;
+          forecastFirstDescription.textContent = forecastDescription;
+          forecastFirstTemperature.textContent = forecastTemperature;
         } else if(j === 1) {
           forecastSecondDay.textContent = forecastDayName;
+          forecastSecondIcon.src = forecastIcon;
+          forecastSecondDescription.textContent = forecastDescription;
+          forecastSecondTemperature.textContent = forecastTemperature;
         } else if(j === 2) {
           forecastThirdDay.textContent = forecastDayName;
+          forecastThirdIcon.src = forecastIcon;
+          forecastThirdDescription.textContent = forecastDescription;
+          forecastThirdTemperature.textContent = forecastTemperature;
         }
 
       }
