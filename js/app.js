@@ -64,7 +64,7 @@ window.onload = function() {
       var weather = JSON.parse(http.responseText);
       var temperature = weather.main.temp;
       var city = weather.name;
-      var description = weather.weather[0].description;
+      var description = capitalizeFirstLetter(weather.weather[0].description);
       var icon = "http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png";
 
       validResultsDiv.style.display = "block";
@@ -105,17 +105,17 @@ window.onload = function() {
         if(j === 0) {
           forecastFirstDay.textContent = forecastDayName;
           forecastFirstIcon.src = forecastIcon;
-          forecastFirstDescription.textContent = forecastDescription;
+          forecastFirstDescription.textContent = capitalizeFirstLetter(forecastDescription);
           forecastFirstTemperature.innerHTML = forecastTemperature + "&#8451;";
         } else if(j === 1) {
           forecastSecondDay.textContent = forecastDayName;
           forecastSecondIcon.src = forecastIcon;
-          forecastSecondDescription.textContent = forecastDescription;
+          forecastSecondDescription.textContent = capitalizeFirstLetter(forecastDescription);
           forecastSecondTemperature.innerHTML = forecastTemperature + "&#8451;";
         } else if(j === 2) {
           forecastThirdDay.textContent = forecastDayName;
           forecastThirdIcon.src = forecastIcon;
-          forecastThirdDescription.textContent = forecastDescription;
+          forecastThirdDescription.textContent = capitalizeFirstLetter(forecastDescription);
           forecastThirdTemperature.innerHTML = forecastTemperature + "&#8451;";
         }
 
@@ -159,6 +159,8 @@ window.onload = function() {
 
     //Draw error message as JSON returned no results
     function drawNoWeatherFound() {
+
+      console.log(222);
       validResultsDiv.style.display = "none";
       invalidResultsDiv.style.display = "block";
       errorTextElem.textContent = "There has been a problem finding weather information. Please try another search term.";
@@ -182,3 +184,7 @@ window.onload = function() {
       http.send();
     }
 };
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}

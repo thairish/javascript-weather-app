@@ -8,6 +8,7 @@
     <!-- Taken from the latest CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
   </head>
 
@@ -21,68 +22,69 @@
         </div>
       </div>
 
-      <p>Enter your location to search for weather:</p>
+      <div class="clearfix">
+        <p class="search-text">Enter your location to search for weather:</p>
 
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Search</button>
-        </span>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Search</button>
+          </span>
+        </div>
       </div>
 
-
-
-
-      <div class="container">
-        <div id="valid-weather" class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12 current-weather">
-            <h1></h1>
-            <p class="weather-temperature"></p>
-            <img src="" alt="weather-icon">
-            <p class="weather-description"></p>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 forecast-weather">
-            <div class="forecast-first">
-              <span class="day-name"></span>
-              <img src="" alt="weather-forecast-icon">
-              <span class="weather-description"></span>
-              <span class="weather-temperature"></span>
-            </div>
-            <div class="clear"></div>
-            <div class="forecast-second">
-              <span class="day-name"></span>
-              <img src="" alt="weather-forecast-icon">
-              <span class="weather-description"></span>
-              <span class="weather-temperature"></span>
-            </div>
-            <div class="clear"></div>
-            <div class="forecast-third">
-              <span class="day-name"></span>
-              <img src="" alt="weather-forecast-icon">
-              <span class="weather-description"></span>
-              <span class="weather-temperature"></span>
-            </div>
-          </div>
+      <div id="valid-weather" class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 current-weather">
+          <h1></h1>
+          <p class="weather-temperature"></p>
+          <img src="" alt="weather-icon">
+          <p class="weather-description"></p>
         </div>
-
-        <div id="invalid-weather" class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <p></p>
+        <div class="col-lg-6 col-md-6 col-sm-12 forecast-weather">
+          <div class="forecast-first">
+            <ul class="list-inline">
+              <li class="list-inline-item"><span class="day-name"></span></li>
+              <li class="list-inline-item"><img src="" alt="weather-forecast-icon"></li>
+              <li class="list-inline-item"><span class="weather-description"></span></li>
+              <li class="list-inline-item"><span class="weather-temperature"></span></li>
+            </ul>
+          </div>
+          <div class="forecast-second">
+            <ul class="list-inline">
+              <li class="list-inline-item"><span class="day-name"></span></li>
+              <li class="list-inline-item"><img src="" alt="weather-forecast-icon"></li>
+              <li class="list-inline-item"><span class="weather-description"></span></li>
+              <li class="list-inline-item"><span class="weather-temperature"></span></li>
+            </ul>
+          </div>
+          <div class="forecast-third">
+            <ul class="list-inline">
+              <li class="list-inline-item"><span class="day-name"></span></li>
+              <li class="list-inline-item"><img src="" alt="weather-forecast-icon"></li>
+              <li class="list-inline-item"><span class="weather-description"></span></li>
+              <li class="list-inline-item"><span class="weather-temperature"></span></li>
+            </ul>
           </div>
         </div>
       </div>
 
-
-
-
-
-      <footer class="footer">
-        <div class="jumbotron">
-          <p>footer content</p>
+      <div id="invalid-weather" class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <p></p>
         </div>
-      </footer>
+      </div>
 
-    </div>
+    <footer class="footer">
+      <div class="jumbotron">
+        <ul class="list-inline">
+          <li class="list-inline-item"><p>Created by <a target="_BLANK" href="http://www.jameskconnor.co.uk">James Connor</a></p></li>
+          <li class="list-inline-item"><a class="github-link" target="_BLANK" href="https://github.com/thairish"><img src="images/social-github.png" alt="github" ></a></li>
+          <li class="list-inline-item"><a class="linkedin-link" target="_BLANK" href="https://www.linkedin.com/in/jameskconnor/"><img src="images/social-linkedin.png" alt="linkedin" ></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
 
     <!-- Taken from the latest CDN -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
