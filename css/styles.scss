@@ -168,13 +168,45 @@ body {
   margin-right: 15px;
 }
 
-.search-text {
+.search-text,
+#invalid-weather p {
   font-size: 22px;
   text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .search-text,
 .input-group {
   margin-left: 15px;
   margin-right: 15px;
-} 
+}
+
+@media (max-width: 1200px) {
+  .forecast-weather li:first-child {
+      min-width: 125px;
+  }
+}
+
+@media (max-width: 991px) {
+  .current-weather {
+    margin-bottom: 40px;
+  }
+
+  .forecast-weather ul {
+    border-bottom: 2px solid #dee0e3;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 456px) {
+  .forecast-weather li:first-child {
+      min-width: 100%;
+  }
+}
